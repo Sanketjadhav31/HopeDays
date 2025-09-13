@@ -134,11 +134,70 @@ const sampleHotels = [
       max: 2000,
       currency: "EUR"
     },
+    roomTypes: [
+      {
+        name: "Deluxe Room",
+        price: 800,
+        facilities: ["Air Conditioning", "WiFi", "TV", "Mini Bar", "Safe", "City View"],
+        maxOccupancy: 2,
+        size: "35 sqm"
+      },
+      {
+        name: "Executive Suite",
+        price: 1500,
+        facilities: ["Air Conditioning", "WiFi", "TV", "Mini Bar", "Safe", "Balcony", "Sofa", "Work Desk"],
+        maxOccupancy: 4,
+        size: "65 sqm"
+      },
+      {
+        name: "Presidential Suite",
+        price: 2000,
+        facilities: ["Air Conditioning", "WiFi", "TV", "Mini Bar", "Safe", "Balcony", "Sofa", "Work Desk", "Kitchenette", "Bathtub"],
+        maxOccupancy: 6,
+        size: "120 sqm"
+      }
+    ],
+    nearbyAttractions: [
+      {
+        name: "Louvre Museum",
+        distance: "1.2 km",
+        description: {
+          en: "World's largest art museum and historic monument",
+          ar: "أكبر متحف فني في العالم ونصب تاريخي"
+        }
+      },
+      {
+        name: "Eiffel Tower",
+        distance: "2.5 km",
+        description: {
+          en: "Iconic iron lattice tower and symbol of Paris",
+          ar: "برج حديدي شبكي أيقوني ورمز باريس"
+        }
+      },
+      {
+        name: "Champs-Élysées",
+        distance: "0.8 km",
+        description: {
+          en: "Famous avenue for shopping and entertainment",
+          ar: "شارع شهير للتسوق والترفيه"
+        }
+      }
+    ],
     images: [
       {
         url: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
         caption: "Luxury suite with city view",
         isPrimary: true
+      },
+      {
+        url: "https://picsum.photos/800/600",
+        caption: "Hotel lobby",
+        isPrimary: false
+      },
+      {
+        url: "https://picsum.photos/1000/600",
+        caption: "Restaurant view",
+        isPrimary: false
       }
     ],
     availability: {
@@ -217,11 +276,70 @@ const sampleHotels = [
       max: 1500,
       currency: "USD"
     },
+    roomTypes: [
+      {
+        name: "Standard Room",
+        price: 600,
+        facilities: ["Air Conditioning", "WiFi", "TV", "Safe", "City View"],
+        maxOccupancy: 2,
+        size: "28 sqm"
+      },
+      {
+        name: "Deluxe Room",
+        price: 900,
+        facilities: ["Air Conditioning", "WiFi", "TV", "Mini Bar", "Safe", "City View", "Work Desk"],
+        maxOccupancy: 3,
+        size: "42 sqm"
+      },
+      {
+        name: "Executive Suite",
+        price: 1500,
+        facilities: ["Air Conditioning", "WiFi", "TV", "Mini Bar", "Safe", "City View", "Sofa", "Work Desk", "Bathtub"],
+        maxOccupancy: 4,
+        size: "75 sqm"
+      }
+    ],
+    nearbyAttractions: [
+      {
+        name: "Tokyo Skytree",
+        distance: "3.2 km",
+        description: {
+          en: "Tallest structure in Japan and broadcasting tower",
+          ar: "أطول هيكل في اليابان وبرج البث"
+        }
+      },
+      {
+        name: "Senso-ji Temple",
+        distance: "2.8 km",
+        description: {
+          en: "Ancient Buddhist temple in Asakusa",
+          ar: "معبد بوذي قديم في أساكوسا"
+        }
+      },
+      {
+        name: "Tokyo Station",
+        distance: "1.5 km",
+        description: {
+          en: "Major railway station and architectural landmark",
+          ar: "محطة سكك حديدية رئيسية ومعلم معماري"
+        }
+      }
+    ],
     images: [
       {
         url: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
         caption: "Tokyo skyline view from room",
         isPrimary: true
+      },
+      {
+        url: "https://picsum.photos/800/500",
+        caption: "Hotel exterior",
+        isPrimary: false
+      },
+      {
+        url: "https://picsum.photos/1000/500",
+        caption: "Spa area",
+        isPrimary: false
       }
     ],
     availability: {
@@ -487,7 +605,7 @@ async function seedDatabase() {
   try {
     // Connect to MongoDB
     console.log('Connecting to MongoDB...');
-    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/travel-app');
+    await mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://sanketjadhav3280:Password%40310@hopedays.cqoyiqh.mongodb.net/?retryWrites=true&w=majority&appName=Hopedays');
     console.log('Connected to MongoDB successfully!');
 
     // Clear existing data

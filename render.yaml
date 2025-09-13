@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: travel-app-backend
+    env: node
+    buildCommand: npm install && cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        fromDatabase:
+          name: travel-app-db
+          property: connectionString
+      - key: FRONTEND_URL
+        value: https://your-app-name.netlify.app

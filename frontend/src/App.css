@@ -453,6 +453,133 @@
   gap: 8px;
 }
 
+/* Room Types Styles */
+.room-types-list {
+  margin-top: 16px;
+}
+
+.room-types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.room-type-card {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 12px;
+  transition: all 0.2s ease;
+}
+
+.room-type-card:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
+}
+
+.room-type-name {
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+
+.room-type-price {
+  font-size: 14px;
+  font-weight: 500;
+  color: #059669;
+  margin-bottom: 8px;
+}
+
+.room-type-details {
+  display: flex;
+  gap: 12px;
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 8px;
+}
+
+.room-facilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.facility-tag {
+  background-color: #dbeafe;
+  color: #1e40af;
+  font-size: 10px;
+  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid #bfdbfe;
+}
+
+/* Nearby Attractions Styles */
+.attractions-list {
+  margin-top: 16px;
+}
+
+.attractions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.attraction-item {
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  padding: 12px;
+  transition: all 0.2s ease;
+}
+
+.attraction-item:hover {
+  border-color: #10b981;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.1);
+}
+
+.attraction-name {
+  font-weight: 600;
+  color: #065f46;
+  margin-bottom: 4px;
+}
+
+.attraction-distance {
+  font-size: 12px;
+  font-weight: 500;
+  color: #059669;
+  margin-bottom: 6px;
+}
+
+.attraction-description {
+  font-size: 12px;
+  color: #374151;
+  line-height: 1.4;
+}
+
+/* Arabic Text Support */
+.arabic-text {
+  direction: rtl;
+  text-align: right;
+  font-family: 'Arial', 'Tahoma', sans-serif;
+}
+
+.arabic-text .item-card-description,
+.arabic-text .attraction-description {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Language-specific styling */
+.language-ar .item-card-description,
+.language-ar .attraction-description {
+  direction: rtl;
+  text-align: right;
+  font-family: 'Arial', 'Tahoma', sans-serif;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .header h1 {

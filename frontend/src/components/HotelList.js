@@ -309,7 +309,7 @@ const HotelList = ({
                 </div>
                 
                 <div className="item-card-body">
-                  <p className="item-card-description">
+                  <p className={`item-card-description ${language === 'ar' ? 'arabic-text' : ''}`}>
                     {hotel.description[language] || hotel.description.en}
                   </p>
                   
@@ -353,6 +353,53 @@ const HotelList = ({
                             +{hotel.amenities.length - 5} more
                           </span>
                         )}
+                      </div>
+                    </div>
+                  )}
+
+                  {hotel.roomTypes && hotel.roomTypes.length > 0 && (
+                    <div className="room-types-list">
+                      <span className="detail-label">Room Types:</span>
+                      <div className="room-types-grid">
+                        {hotel.roomTypes.map((room, index) => (
+                          <div key={index} className="room-type-card">
+                            <div className="room-type-name">{room.name}</div>
+                            <div className="room-type-price">{room.price} {hotel.priceRange.currency}</div>
+                            <div className="room-type-details">
+                              <span>Size: {room.size}</span>
+                              <span>Max: {room.maxOccupancy} guests</span>
+                            </div>
+                            <div className="room-facilities">
+                              {room.facilities.slice(0, 3).map(facility => (
+                                <span key={facility} className="facility-tag">
+                                  {facility}
+                                </span>
+                              ))}
+                              {room.facilities.length > 3 && (
+                                <span className="facility-tag">
+                                  +{room.facilities.length - 3} more
+                                </span>
+                              )}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {hotel.nearbyAttractions && hotel.nearbyAttractions.length > 0 && (
+                    <div className="attractions-list">
+                      <span className="detail-label">Nearby Attractions:</span>
+                      <div className="attractions-grid">
+                        {hotel.nearbyAttractions.map((attraction, index) => (
+                          <div key={index} className="attraction-item">
+                            <div className="attraction-name">{attraction.name}</div>
+                            <div className="attraction-distance">{attraction.distance}</div>
+                            <div className={`attraction-description ${language === 'ar' ? 'arabic-text' : ''}`}>
+                              {attraction.description[language] || attraction.description.en}
+                            </div>
+                          </div>
+                        ))}
                       </div>
                     </div>
                   )}

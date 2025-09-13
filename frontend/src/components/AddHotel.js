@@ -30,6 +30,8 @@ const AddHotel = ({ hotels, setHotels, destinations, language }) => {
       max: '',
       currency: 'USD'
     },
+    roomTypes: [],
+    nearbyAttractions: [],
     images: [],
     availability: {
       checkInTime: '15:00',

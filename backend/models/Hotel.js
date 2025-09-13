@@ -131,6 +131,64 @@ const hotelSchema = new mongoose.Schema({
       default: 'USD'
     }
   },
+  roomTypes: [{
+    name: {
+      type: String,
+      required: true,
+      trim: true,
+      maxlength: [100, 'Room type name cannot exceed 100 characters']
+    },
+    price: {
+      type: Number,
+      required: true,
+      min: [0, 'Price cannot be negative']
+    },
+    facilities: [{
+      type: String,
+      enum: [
+        'Air Conditioning', 'WiFi', 'TV', 'Mini Bar', 'Safe', 'Balcony',
+        'Sea View', 'City View', 'Garden View', 'Kitchenette', 'Sofa',
+        'Work Desk', 'Coffee Machine', 'Bathtub', 'Shower', 'Room Service'
+      ]
+    }],
+    maxOccupancy: {
+      type: Number,
+      required: true,
+      min: [1, 'Max occupancy must be at least 1'],
+      max: [10, 'Max occupancy cannot exceed 10']
+    },
+    size: {
+      type: String,
+      trim: true,
+      maxlength: [50, 'Room size cannot exceed 50 characters']
+    }
+  }],
+  nearbyAttractions: [{
+    name: {
+      type: String,
+      required: true,
+      trim: true,
+      maxlength: [100, 'Attraction name cannot exceed 100 characters']
+    },
+    distance: {
+      type: String,
+      required: true,
+      trim: true,
+      maxlength: [20, 'Distance cannot exceed 20 characters']
+    },
+    description: {
+      en: {
+        type: String,
+        trim: true,
+        maxlength: [200, 'Description cannot exceed 200 characters']
+      },
+      ar: {
+        type: String,
+        trim: true,
+        maxlength: [200, 'Description cannot exceed 200 characters']
+      }
+    }
+  }],
   images: [{
     url: {
       type: String,

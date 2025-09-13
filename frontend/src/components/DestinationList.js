@@ -158,7 +158,7 @@ const DestinationList = ({ destinations, setDestinations, language, onSelectDest
                 </div>
                 
                 <div className="item-card-body">
-                  <p className="item-card-description">
+                  <p className={`item-card-description ${language === 'ar' ? 'arabic-text' : ''}`}>
                     {destination.description[language] || destination.description.en}
                   </p>
                   
