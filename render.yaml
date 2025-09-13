@@ -12,4 +12,4 @@ services:
           name: travel-app-db
           property: connectionString
       - key: FRONTEND_URL
-        value: https://your-app-name.netlify.app
+        value: https://hopeday.netlify.app

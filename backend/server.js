@@ -25,8 +25,9 @@ app.use(limiter);
 const allowedOrigins = [
   'http://localhost:3000',
   'http://localhost:3001',
-  'https://your-frontend-domain.com'
-];
+  'https://hopeday.netlify.app',
+  process.env.FRONTEND_URL // Dynamically use the environment variable
+].filter(Boolean); // Filter out any undefined or null values
 
 app.use(cors({
   origin: function (origin, callback) {
