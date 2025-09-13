@@ -11,6 +11,7 @@
     "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
     "build": "cd frontend && npm run build"
   },
+  
   "keywords": ["travel", "hotel", "destination", "express", "react", "mongodb"],
   "author": "",
   "license": "MIT",
