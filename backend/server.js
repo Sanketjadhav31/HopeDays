@@ -65,6 +65,10 @@ const connectDB = async () => {
 
 // Connect to database
 connectDB();
+// test route (root)
+app.get("/", (req, res) => {
+  res.json({ message: "Backend is running ✅" });
+});
 
 // Routes
 app.use('/api/destinations', destinationRoutes);
